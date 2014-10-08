@@ -1,0 +1,9 @@
+# Mac finder artifacts
+.DS_Store
+
+# vim artifacts
+**.swp
+
+# Other
+node_modules
+bower_components
