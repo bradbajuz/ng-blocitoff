@@ -1,6 +1,6 @@
-bloccitoff = angular.module('Bloccitoff', ['ui.router']);
+blocitoff = angular.module('Blocitoff', ['ui.router']);
 
-bloccitoff.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider.state('landing', {
@@ -10,6 +10,6 @@ bloccitoff.config(['$stateProvider', '$locationProvider', function($stateProvide
   });
 }]);
 
-bloccitoff.controller('Landing.controller', ['$scope', function($scope) {
+blocitoff.controller('Landing.controller', ['$scope', function($scope) {
 
 }]);
