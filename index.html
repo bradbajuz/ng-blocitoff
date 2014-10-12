@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html ng-app="blocitoff">
+<html data-ng-app="Blocitoff">
   <head>
     <title>Blocitoff</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script>
-      require('scripts/app')
-    </script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/app/stylesheets/app.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="app/scripts/app.js"></script>
+
   </head>
   <body>
-    Blocitoff - A Self Destructing ToDo List
+    <nav class="tasks-header-nav navbar">
+      <div class="navbar-header">
+        <a ui-sref="landing" class="navbar-left">
+          Blocitoff
+        </a>
+      </div>
+    </nav>
+    <!-- Render templates here -->
+    <div ui-view></div>
   </body>
 </html>
