@@ -11,3 +11,8 @@ body {
 body.landing {
   background: #E6EBE6;
 }
+
+table td {
+  padding: 5px; 
+  border: 1px solid #CCC;
+}

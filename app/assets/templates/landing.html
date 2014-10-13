@@ -1,0 +1,22 @@
+<div class="landing-content">
+    {{header}}
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Days Left</th>
+        <th>Complete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in todo.items">
+        <td>{{item.title}}</td>
+        <td>{{item.days}}</td>
+        <td>{{item.complete}}</td>
+      </tr>  
+    </tbody>
+  </table>
+</div>
