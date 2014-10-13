@@ -1,14 +1,10 @@
-var itemOne = {
+var taskList = {
   items: [
     {title: 'Learn Haskell', days: '7', complete: 'o'},
     {title: 'Take out trash', days: '3', complete: 'o'},
     {title: 'Get beer', days: '1', complete: 'o'}
   ]
 };
-
-// var itemTwo = {
-//   name: 'Change tire',
-// };
 
 blocitoff = angular.module('Blocitoff', ['ui.router']);
 
@@ -25,7 +21,6 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
 blocitoff.controller('Landing.controller', ['$scope', function($scope) {
   $scope.header = "A self-destructing todo list.";
   
-  $scope.todo = angular.copy(itemOne);
-
+  $scope.todo = angular.copy(taskList);
 
 }]);
