@@ -1,9 +1,9 @@
 <div class="landing-content">
-    <p>{{header}}</p>
+    <p class="subtext">{{header}}</p>
 </div>
 
-<div>
-  <table>
+<div class="col-md-4">
+  <table class="table">
     <thead>
       <tr>
         <th>Title</th>
@@ -15,7 +15,9 @@
       <tr ng-repeat="item in todo.items">
         <td>{{item.title}}</td>
         <td>{{item.days}}</td>
-        <td>{{item.complete}}</td>
+        <td>
+          <input type="checkbox"></input>
+        </td>
       </tr>  
     </tbody>
   </table>

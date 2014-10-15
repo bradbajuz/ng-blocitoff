@@ -10,8 +10,9 @@ body {
   font-family: 'Open Sans';
   color: black;
   min-height: 100%;
-  background: #E6EBE6;
+  background: #F7F7F7;
   padding-bottom: 100px;
+  text-align: center;
 }
 
 .landing-content {
@@ -29,11 +30,17 @@ a {
   text-indent: 10px;
 }
 
-p {
+p.subtext {
   font-size: 20px;
+  text-align: left;
+  text-indent: 20px;
 }
 
 table td {
   padding: 5px; 
-  border: 1px solid #CCC;
+  border: 2px solid #000;
+}
+
+tbody tr:hover {
+  background-color: #FFF;
 }
