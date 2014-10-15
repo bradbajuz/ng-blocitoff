@@ -23,4 +23,10 @@ blocitoff.controller('Landing.controller', ['$scope', function($scope) {
   
   $scope.todo = angular.copy(taskList);
 
+  $scope.addTodo = function () {
+    $scope.items.push({title: $scope.todoTitle, days: 7, complete: false})
+    $scope.todoTitle = "";
+  }
+    
+
 }]);
