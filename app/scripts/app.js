@@ -1,8 +1,8 @@
 var taskList = {
   items: [
-    {title: 'Learn Haskell', days: 7, complete: 'o'},
-    {title: 'Take out trash', days: 3, complete: 'o'},
-    {title: 'Get beer', days: 1, complete: 'o'}
+    {title: 'Learn Haskell', days: 7, complete: false},
+    {title: 'Take out trash', days: 3, complete: false},
+    {title: 'Get beer', days: 1, complete: false}
   ]
 };
 

@@ -13,12 +13,12 @@
     </thead>
     <tbody>
       <tr ng-repeat="item in todo.items">
-        <td>{{item.title}}</td>
-        <td>{{item.days}}</td>
+        <td ng-class="{'true': complete}">{{item.title}}</td>
+        <td ng-class="{'true': complete}">{{item.days}}</td>
         <td>
-          <input type="checkbox"></input>
+          <input type="checkbox" ng-model="complete"></input>
         </td>
-      </tr>  
+      </tr>
     </tbody>
   </table>
 </div>

@@ -44,3 +44,8 @@ table td {
 tbody tr:hover {
   background-color: #FFF;
 }
+
+.true {
+  text-decoration: line-through;
+  color: #AFAFAF;
+}
