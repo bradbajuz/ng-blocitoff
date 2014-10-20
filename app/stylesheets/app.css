@@ -49,3 +49,8 @@ tbody tr:hover {
   text-decoration: line-through;
   color: #AFAFAF;
 }
+
+.expired {
+  text-decoration: line-through;
+  color: #FF0000;
+}

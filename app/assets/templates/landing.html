@@ -15,8 +15,10 @@
       <tr ng-repeat="item in items">
         <td ng-class="{'true': complete}">{{item.title}}</td>
         <td ng-class="{'true': complete}">{{item.days}}</td>
+        <td>
           <input type="checkbox" ng-model="complete"/>
         </td>
+        <td expired ng-class="{'true': expired}">{{item.expired}}</td>
       </tr>
     </tbody>
     <tfoot>
