@@ -12,17 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="item in todo.items">
+      <tr ng-repeat="item in items">
         <td ng-class="{'true': complete}">{{item.title}}</td>
         <td ng-class="{'true': complete}">{{item.days}}</td>
-        <td>
           <input type="checkbox" ng-model="complete"/>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <input type="text" ng-model="todoTitle" size="25"/>
-      <button ng-click="addItem()">Add</button>
+      <button ng-click="addTodo()">Add</button>
     </tfoot>
   </table>
 </div>
