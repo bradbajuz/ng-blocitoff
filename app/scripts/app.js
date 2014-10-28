@@ -14,10 +14,10 @@ blocitoff.controller('Landing.controller', ['$scope', function($scope) {
   $scope.header = "A self-destructing todo list.";
 
   $scope.items = [
-    {title: 'Learn Haskell', days: 7, complete: false, expired: false},
+    {title: 'Learn Haskell', days: 7, complete: false},
     {title: 'Take out trash', days: 3, complete: false},
     {title: 'Get beer', days: 1, complete: false},
-    {title: 'Learn to program', days: 90, complete: false, expired: true}
+    {title: 'Learn to program', days: 90, complete: false}
   ];
   
   $scope.addTodo = function () {
@@ -25,10 +25,10 @@ blocitoff.controller('Landing.controller', ['$scope', function($scope) {
     $scope.todoTitle = "";
   }
 
-  $scope.expiredTodo = function () {
-    if ($scope.items.days > 7) {
-      
-    }
+  $scope.expiredTodo = function (items) {
+    if ($scope.items.days > 1) {
+      return true;
+    };
   }
     
 }]);
