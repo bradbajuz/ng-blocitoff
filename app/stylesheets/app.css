@@ -45,7 +45,7 @@ tbody tr:hover {
   background-color: #FFF;
 }
 
-.true {
+.complete {
   text-decoration: line-through;
   color: #AFAFAF;
 }

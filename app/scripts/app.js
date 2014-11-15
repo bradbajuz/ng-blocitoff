@@ -10,25 +10,36 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
   });
 }]);
 
-blocitoff.controller('Landing.controller', ['$scope', function($scope) {
+blocitoff.controller('Landing.controller', ['$scope', 'TaskService', function($scope, TaskService) {
   $scope.header = "A self-destructing todo list.";
-
-  $scope.items = [
-    {title: 'Learn Haskell', days: 7, complete: false},
-    {title: 'Take out trash', days: 3, complete: false},
-    {title: 'Get beer', days: 1, complete: false},
-    {title: 'Learn to program', days: 90, complete: false}
-  ];
   
+  TaskService.all(function(data){
+    $scope.items = data;
+  });
+
   $scope.addTodo = function () {
-    $scope.items.push({title: $scope.todoTitle, days: 7, complete: false})
+    var newItem = {item: $scope.todoTitle, days: 7, complete: false};
+    $scope.items.push(newItem);
     $scope.todoTitle = "";
+    TaskService.save(newItem);
   }
 
-  $scope.expiredTodo = function (items) {
-    if ($scope.items.days > 1) {
-      return true;
-    };
+  $scope.expiredTodo = function (item) {
+    return item.days < 2;
   }
     
+}]);
+
+blocitoff.factory('TaskService', ['$http', function($http) {
+
+  return {
+    all: function(callback){
+      $http.get('http://127.0.0.1:8080/tasks.json').success(callback);
+    },
+
+    save: function(item){
+      $http.post('http://127.0.0.1:8080/tasks', item);
+    }
+  };
+
 }]);
