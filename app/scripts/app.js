@@ -31,7 +31,7 @@ blocitoff.controller('Landing.controller', ['$scope', 'TaskService', function($s
     
 }]);
 
-blocitoff.filter('format', function () {
+blocitoff.filter('formatDay', function () {
   return function (timeDay) {
     var result = new Date(timeDay.created_at).getTime();
     return result;

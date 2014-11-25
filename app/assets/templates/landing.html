@@ -19,7 +19,7 @@
     <tbody>
       <tr ng-class="{expired: expiredTodo(item)}" ng-repeat="item in items">
         <td ng-class="{complete: complete}">{{item.item}}</td>
-        <td ng-class="{complete: complete}">{{item | format}}</td>
+        <td ng-class="{complete: complete}">{{item | formatDay}}</td>
         <td>
           <input type="checkbox" ng-model="complete"/>
         </td>
