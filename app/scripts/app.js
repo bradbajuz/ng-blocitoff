@@ -18,17 +18,25 @@ blocitoff.controller('Landing.controller', ['$scope', 'TaskService', function($s
   });
 
   $scope.addTodo = function () {
-    var newItem = {item: $scope.todoTitle, days: 7, complete: false};
+    var newItem = {item: $scope.todoTitle, complete: false};
     $scope.items.push(newItem);
     $scope.todoTitle = "";
     TaskService.save(newItem);
   }
 
   $scope.expiredTodo = function (item) {
-    return item.days < 2;
+    var deadline = (new Date(item.created_at).getTime() + 604800000);
+    return deadline < Date.now();
   }
     
 }]);
+
+blocitoff.filter('format', function () {
+  return function (timeDay) {
+    var result = new Date(timeDay.created_at).getTime();
+    return result;
+  };
+});
 
 blocitoff.factory('TaskService', ['$http', function($http) {
 
@@ -38,7 +46,7 @@ blocitoff.factory('TaskService', ['$http', function($http) {
     },
 
     save: function(item){
-      $http.post('http://127.0.0.1:8080/tasks', item);
+      $http.post('http://127.0.0.1:8080/tasks.json', item);
     }
   };
 

@@ -3,8 +3,10 @@
 </div>
 
 <div class="col-md-4">
-  <input type="text" ng-model="todoTitle" size="25"/>
-  <button ng-click="addTodo()">Add</button>
+  <form ng-submit="addTodo()">
+    <input type="text" ng-model="todoTitle" size="25"/>
+    <button ng-click="addTodo">Add</button>
+  </form>
 
   <table class="table">
     <thead>
@@ -17,7 +19,7 @@
     <tbody>
       <tr ng-class="{expired: expiredTodo(item)}" ng-repeat="item in items">
         <td ng-class="{complete: complete}">{{item.item}}</td>
-        <td ng-class="{complete: complete}">{{item.days}}</td>
+        <td ng-class="{complete: complete}">{{item | format}}</td>
         <td>
           <input type="checkbox" ng-model="complete"/>
         </td>
