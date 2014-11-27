@@ -33,8 +33,10 @@ blocitoff.controller('Landing.controller', ['$scope', 'TaskService', function($s
 
 blocitoff.filter('formatDay', function () {
   return function (timeDay) {
-    var result = new Date(timeDay.created_at).getTime();
-    return result;
+    var oneDay = 86400000;
+    var timeCreated = new Date(timeDay.created_at).getTime();
+    var subtractDays = timeCreated - Date.now();
+    return Math.round(Math.abs(subtractDays / oneDay + 7));
   };
 });
 
