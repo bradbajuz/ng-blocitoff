@@ -10,12 +10,20 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
   });
 }]);
 
-blocitoff.controller('Landing.controller', ['$scope', 'TaskService', function($scope, TaskService) {
+blocitoff.controller('Landing.controller', ['$scope', 'TaskService', '$interval', function($scope, TaskService, $interval) {
   $scope.header = "A self-destructing todo list.";
   
-  TaskService.all(function(data){
-    $scope.items = data;
-  });
+  this.loadTasks = function (){
+    TaskService.all(function(data){
+      $scope.items = data;
+    });
+  };
+
+  $interval(function(){
+    this.loadTasks();
+  }.bind(this), 10000);
+
+  this.loadTasks();
 
   $scope.addTodo = function () {
     var newItem = {item: $scope.todoTitle, complete: false};
