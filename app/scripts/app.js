@@ -13,17 +13,15 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
 blocitoff.controller('Landing.controller', ['$scope', 'TaskService', '$interval', function($scope, TaskService, $interval) {
   $scope.header = "A self-destructing todo list.";
   
-  this.loadTasks = function (){
+  var loadTasks = function (){
     TaskService.all(function(data){
       $scope.items = data;
     });
   };
+  
+  $interval(loadTasks, 10000);
 
-  $interval(function(){
-    this.loadTasks();
-  }.bind(this), 10000);
-
-  this.loadTasks();
+  loadTasks();
 
   $scope.addTodo = function () {
     var newItem = {item: $scope.todoTitle, complete: false};
@@ -35,6 +33,12 @@ blocitoff.controller('Landing.controller', ['$scope', 'TaskService', '$interval'
   $scope.expiredTodo = function (item) {
     var deadline = (new Date(item.created_at).getTime() + 604800000);
     return deadline < Date.now();
+  }
+
+  $scope.toggleCompletion = function(item) {
+    item.complete = !item.complete;
+
+    TaskService.update(item);
   }
 
 }]);
@@ -67,6 +71,10 @@ blocitoff.factory('TaskService', ['$http', function($http) {
         item.id = data.id;
         item.created_at = data.created_at;
       });
+    },
+
+    update: function(item){
+      $http.patch('http://127.0.0.1:8080/tasks/' + item.id + '.json', item);
     }
   };
 

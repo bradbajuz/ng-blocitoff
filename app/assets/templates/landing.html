@@ -5,7 +5,7 @@
 <div class="col-md-4">
   <form ng-submit="addTodo()">
     <input type="text" ng-model="todoTitle" size="25"/>
-    <button>Add</button>
+    <button ng-click="addTodo">Add</button>
   </form>
 
   <table class="table">
@@ -18,10 +18,10 @@
     </thead>
     <tbody>
       <tr ng-class="{expired: expiredTodo(item)}" ng-repeat="item in items">
-        <td ng-class="{complete: complete}">{{item.item}}</td>
-        <td ng-class="{complete: complete}">{{item | formatDay}}</td>
+        <td ng-class="{complete: item.complete}">{{item.item}}</td>
+        <td ng-class="{complete: item.complete}">{{item | formatDay}}</td>
         <td>
-          <input type="checkbox" ng-model="complete"/>
+          <input type="checkbox" ng-click="toggleCompletion(item)" ng-checked="item.complete" />
         </td>
       </tr>
     </tbody>
