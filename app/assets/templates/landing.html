@@ -1,13 +1,9 @@
-<div class="landing-content">
-    <p class="subtext">{{header}}</p>
-</div>
-
-<div class="col-md-4">
+<div class="col-md-4 col-centered">
   <form ng-submit="addTodo()">
     <input type="text" ng-model="todoTitle" size="25"/>
-    <button ng-click="addTodo">Add</button>
+    <button ng-click="addTodo">Add Task</button>
   </form>
-
+  <p class="input-space"></p>
   <table class="table">
     <thead>
       <tr>

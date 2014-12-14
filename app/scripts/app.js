@@ -11,7 +11,6 @@ blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider
 }]);
 
 blocitoff.controller('Landing.controller', ['$scope', 'TaskService', '$interval', function($scope, TaskService, $interval) {
-  $scope.header = "A self-destructing todo list.";
   
   var loadTasks = function (){
     TaskService.all(function(data){

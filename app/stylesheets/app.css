@@ -10,14 +10,9 @@ body {
   font-family: 'Open Sans';
   color: black;
   min-height: 100%;
-  background: #F7F7F7;
+  background: #FBFDFC;
   padding-bottom: 100px;
   text-align: center;
-}
-
-.landing-content {
-  background: #A1A4A1;
-  text-indent: 10px;
 }
 
 a {
@@ -25,15 +20,28 @@ a {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.2;
-  font-size: 25px ;
+  font-size: 30px ;
   color: white;
   text-indent: 10px;
 }
 
+th {
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  font-size: 15px;
+}
+
+tr {
+  font-weight: 600;
+}
+
 p.subtext {
-  font-size: 20px;
+  line-height: 39px;
+  color: white;
+  font-size: 18px;
   text-align: left;
-  text-indent: 20px;
+  text-indent: 10px;
 }
 
 table td {
@@ -43,6 +51,15 @@ table td {
 
 tbody tr:hover {
   background-color: #FFF;
+}
+
+.col-centered
+{
+  margin: 0 auto;
+  float: none;
+}
+.input-space {
+  padding-top: 1cm;
 }
 
 .complete {
