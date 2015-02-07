@@ -1,7 +1,10 @@
 blocitoff = angular.module('Blocitoff', ['ui.router']);
 
 blocitoff.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
 
   $stateProvider.state('landing', {
     url: '/',
